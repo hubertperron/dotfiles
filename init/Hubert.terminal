@@ -146,13 +146,14 @@
 	<key>BackgroundColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
-	AAGGoKMHCA9VJG51bGzTCQoLDA0OV05TV2hpdGVcTlNDb2xvclNwYWNlViRjbGFzc0Iw
-	ABADgALSEBESE1okY2xhc3NuYW1lWCRjbGFzc2VzV05TQ29sb3KiEhRYTlNPYmplY3Rf
-	EA9OU0tleWVkQXJjaGl2ZXLRFxhUcm9vdIABCBEaIy0yNztBSFBdZGdpa3B7hIyPmKqt
-	sgAAAAAAAAEBAAAAAAAAABkAAAAAAAAAAAAAAAAAAAC0
+	AAGGoKMHCA9VJG51bGzTCQoLDA0OVU5TUkdCXE5TQ29sb3JTcGFjZVYkY2xhc3NPECow
+	LjA3NDQ1MjI3NTgyIDAuMDc0NDUyMjc1ODIgMC4wNzQ0NTIyNzU4MgAQAYAC0hAREhNa
+	JGNsYXNzbmFtZVgkY2xhc3Nlc1dOU0NvbG9yohIUWE5TT2JqZWN0XxAPTlNLZXllZEFy
+	Y2hpdmVy0RcYVHJvb3SAAQgRGiMtMjc7QUhOW2KPkZOYo6y0t8DS1doAAAAAAAABAQAA
+	AAAAAAAZAAAAAAAAAAAAAAAAAAAA3A==
 	</data>
 	<key>BlinkText</key>
-	<false/>
+	<true/>
 	<key>CursorBlink</key>
 	<false/>
 	<key>CursorColor</key>
@@ -167,19 +168,21 @@
 	<data>
 	YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
 	AAGGoKQHCBESVSRudWxs1AkKCwwNDg8QVk5TU2l6ZVhOU2ZGbGFnc1ZOU05hbWVWJGNs
-	YXNzI0AqAAAAAAAAEBCAAoADVk1vbmFjb9ITFBUWWiRjbGFzc25hbWVYJGNsYXNzZXNW
-	TlNGb250ohUXWE5TT2JqZWN0XxAPTlNLZXllZEFyY2hpdmVy0RobVHJvb3SAAQgRGiMt
-	Mjc8QktSW2JpcnR2eH+Ej5ifoqu9wMUAAAAAAAABAQAAAAAAAAAcAAAAAAAAAAAAAAAA
-	AAAAxw==
+	YXNzI0AqAAAAAAAAEBCAAoADWENvbnNvbGFz0hMUFRZaJGNsYXNzbmFtZVgkY2xhc3Nl
+	c1ZOU0ZvbnSiFRdYTlNPYmplY3RfEA9OU0tleWVkQXJjaGl2ZXLRGhtUcm9vdIABCBEa
+	Iy0yNzxCS1JbYmlydHZ4gYaRmqGkrb/CxwAAAAAAAAEBAAAAAAAAABwAAAAAAAAAAAAA
+	AAAAAADJ
 	</data>
 	<key>FontAntialias</key>
 	<true/>
 	<key>FontHeightSpacing</key>
-	<real>1.1</real>
+	<real>1.0329999999999999</real>
 	<key>FontWidthSpacing</key>
-	<integer>1</integer>
+	<real>0.99993699596774199</real>
+	<key>Linewrap</key>
+	<true/>
 	<key>ProfileCurrentVersion</key>
-	<real>1.00</real>
+	<real>2.02</real>
 	<key>SelectionColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
@@ -223,7 +226,7 @@
 	<key>WindowTitle</key>
 	<string></string>
 	<key>name</key>
-	<string>Mathias</string>
+	<string>Hubert</string>
 	<key>shellExitAction</key>
 	<integer>2</integer>
 	<key>type</key>
