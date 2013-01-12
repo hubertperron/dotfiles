@@ -1,0 +1,34 @@
+#!/bin/bash
+
+### Applications ###
+
+function installdmg {
+	BASE_PATH=$(pwd)
+	NAME=$1
+	URL=$2
+	curl -L -o $NAME.dmg "$URL"
+	MOUNT_PATH=$(hdiutil mount $NAME.dmg | tail -1 | sed 's/.*Apple_HFS//g' | xargs)
+	cd "$MOUNT_PATH"
+	APP_PATH=$(find . -type d -name '*.app' -maxdepth 1 2>/dev/null | tail)
+	cp -R "$APP_PATH" ~/Applications
+	hdiutil eject -force "$MOUNT_PATH"
+	cd $BASE_PATH
+}
+
+installdmg PhpStorm 'http://download.jetbrains.com/webide/PhpStorm-5.0.4.dmg'
+installdmg SequelPro 'http://sequel-pro.googlecode.com/files/Sequel_Pro_0.9.9.1.dmg'
+installdmg Chrome 'https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg'
+
+# Install Git
+#curl -L -o git.dmg 'https://git-osx-installer.googlecode.com/files/git-1.8.1-intel-universal-snow-leopard.dmg'
+#MOUNT_PATH=$(hdiutil mount git.dmg | tail -1 | sed 's/.*Apple_HFS//g' | xargs)
+#cd "$MOUNT_PATH"
+#APP_PATH=$(find . -type d -name '*.pkg' | tail)
+#sudo installer -package "$APP_PATH" -target /
+#hdiutil eject -force "$MOUNT_PATH"
+#cd $BASE_PATH
+
+# Install TotalTerminal
+#curl -L -o TotalTerminal.dmg 'http://downloads.binaryage.com/TotalTerminal-1.3.dmg'
+#MOUNT_PATH=$(hdiutil mount TotalTerminal.dmg | tail -1 | sed 's/.*Apple_HFS//g' | xargs)
+#open "$MOUNT_PATH/TotalTerminal.pkg"
