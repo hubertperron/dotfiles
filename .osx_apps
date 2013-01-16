@@ -3,21 +3,44 @@
 ### Applications ###
 
 function installdmg {
+
 	BASE_PATH=$(pwd)
 	NAME=$1
 	URL=$2
+	FILE=$3
+
+	echo "Installing $NAME ($URL) ..."
+
 	curl -L -o $NAME.dmg "$URL"
 	MOUNT_PATH=$(hdiutil mount $NAME.dmg | tail -1 | sed 's/.*Apple_HFS//g' | xargs)
 	cd "$MOUNT_PATH"
-	APP_PATH=$(find . -type d -name '*.app' -maxdepth 1 2>/dev/null | tail)
-	cp -R "$APP_PATH" ~/Applications
+
+	if [ -n "$FILE" ]; then
+		FILE_PATH=$FILE
+	else
+		FILE_PATH=$(find . \( -name '*.app' -o -name '*.pkg' \) -maxdepth 1 2>/dev/null | tail -1)
+	fi
+
+	FILE_TYPE=$(echo $FILE_PATH | awk -F . '{if (NF>1) {print $NF}}')
+	echo $FILE_TYPE 'file found:' $FILE_PATH
+	
+	if [ "$FILE_TYPE" == 'app' ]; then
+		cp -R "$FILE_PATH" ~/Applications
+	elif [ "$FILE_TYPE" == 'pkg' ]; then
+		echo 'todo'
+	fi
+
 	hdiutil eject -force "$MOUNT_PATH"
 	cd $BASE_PATH
 }
 
 installdmg PhpStorm 'http://download.jetbrains.com/webide/PhpStorm-5.0.4.dmg'
-installdmg SequelPro 'http://sequel-pro.googlecode.com/files/Sequel_Pro_0.9.9.1.dmg'
-installdmg Chrome 'https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg'
+#installdmg SequelPro 'http://sequel-pro.googlecode.com/files/Sequel_Pro_0.9.9.1.dmg'
+#installdmg Chrome 'https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg'
+#installdmg HyperDock 'http://hyperdock.bahoom.com/HyperDock.dmg'
+#installdmg Git 'https://git-osx-installer.googlecode.com/files/git-1.8.1-intel-universal-snow-leopard.dmg'¬
+#installdmg TotalTerminal 'http://downloads.binaryage.com/TotalTerminal-1.3.dmg'
+
 
 # Install Git
 #curl -L -o git.dmg 'https://git-osx-installer.googlecode.com/files/git-1.8.1-intel-universal-snow-leopard.dmg'
