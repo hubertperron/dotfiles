@@ -14,4 +14,19 @@ else
 	fi
 fi
 unset doIt
+
+echo
+read -p "Load OS X custom settings? (y/n) " -n 1
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+	source ~/.osx
+fi
+
+echo
+read -p "Install Liip php? (y/n) " -n 1
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+	curl -s http://php-osx.liip.ch/install.sh | bash -s 5.4
+fi
+
 source ~/.bash_profile
