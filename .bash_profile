@@ -38,6 +38,7 @@ git config --global user.name "$GIT_AUTHOR_NAME"
 GIT_AUTHOR_EMAIL="hubert.perron@gmail.com"
 GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 git config --global user.email "$GIT_AUTHOR_EMAIL"
+git config --global push.default simple
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
