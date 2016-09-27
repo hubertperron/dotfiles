@@ -1,5 +1,7 @@
-# Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:/usr/local/php5/bin:$PATH"
+export PATH="~/.rbenv/shims:/usr/local/bin:$HOME/.bin:/usr/local/php5/bin:$HOME/Library/Android/sdk/platform-tools:$HOME/Library/Android/sdk/tools:/Users/hubertperron/Library/Android/sdk/build-tools/23.0.2:$PATH"
+
+# OS X yosemite ulimit
+ulimit -n 65536 65536
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -135,3 +137,5 @@ export LESS_TERMCAP_md="$ORANGE"
 
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"
+
+export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
